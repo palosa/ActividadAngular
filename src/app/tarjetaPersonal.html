@@ -1,0 +1,47 @@
+<style>
+.uno{color: red;}
+.dos{color: orange;}
+.tres{color: green;}
+</style>
+  <hr>
+  <div>
+    <div>
+      <div *ngFor="let color of colores">
+        <p>Elige el color del mensage de alerta de la edad:</p>
+        <p>{{color.id}}, color: {{color.tonalidad}}</p>
+      </div>
+    <button (click)="restar()">-</button>
+    
+    <p>{{cuenta}}</p>
+    <button (click)="sumar()">+</button>
+    </div>
+    <h1>Informacion personal</h1>
+
+                <div>
+                    Nombre:<input type="text" (keyup)="nom($event)" value="{{nombre}}" placeholder="Nombre"/>
+                </div>
+                <div>
+                    Apellidos:<input type="text" (keyup)="apellido($event)" value="{{apellidos}}" placeholder="Apellidos"/>
+                </div>
+                <div>
+                    Telefono:<input type="text" (keyup)="telefono($event)" value="{{tlf}}" placeholder="Telefono"/>
+                </div>
+                <div>
+                    Edad:<input type="text" (keyup)="edad($event)" value="{{eda}}" placeholder="edad"/>
+                </div>
+
+    </div>
+  <div>
+    <h3 MiEvento> Nombre:{{nombre}}</h3><br>
+    <h3 MiEvento>Apellidos:{{apellidos}}</h3><br>
+    <h3 MiEvento>Telefono:{{tlf}}</h3><br>
+    <h3 MiEvento>Edad:{{eda}}</h3>
+  </div>
+<div [ngClass]="{uno:cuenta==1, dos:cuenta==2, tres:cuenta==3}">
+  <div *ngIf="eda>=18">
+        <h2 MiEvento>Eres mayor de edad </h2>
+      </div>
+      <div *ngIf="eda<18">
+            <h1>Eres menor de edad </h1>
+          </div>
+</div>
